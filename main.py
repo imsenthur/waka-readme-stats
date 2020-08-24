@@ -462,6 +462,12 @@ def get_stats(github):
         loc.calculateLoc()
         stats += '**' + translate['Timeline'] + '**\n\n'
         stats = stats + '![Chart not found](https://github.com/' + username + '/' + username + '/blob/master/charts/bar_graph.png) \n\n'
+        
+    stats = stats + '![Blender](https://img.shields.io/badge/-Blender-orange)'
+    stats = stats + '![Python](https://img.shields.io/badge/-Python-blue)'
+    stats = stats + '![ROS](https://img.shields.io/badge/-ROS-lightgrey)'
+    stats = stats + '![Matlab](https://img.shields.io/badge/-Matlab-yellow)'
+    stats = stats + '![Solidworks](https://img.shields.io/badge/-Solidworks-red)'
 
     return stats
 
