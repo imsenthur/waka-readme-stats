@@ -301,7 +301,7 @@ def get_waka_time_stats():
             empty = False
             stats = stats + generate_commit_list(tz=data['data']['timezone']) + '\n\n'
 
-        stats += '📊 **' + translate['This Week I Spend My Time On'] + '** \n\n'
+#         stats += '📊 **' + translate['This Week I Spend My Time On'] + '** \n\n'
         stats += '```text\n'
         if showTimeZone.lower() in truthy:
             empty = False
@@ -314,7 +314,7 @@ def get_waka_time_stats():
                 lang_list = no_activity
             else:
                 lang_list = make_list(data['data']['languages'])
-            stats = stats + '💬 ' + translate['Languages'] + ': \n' + lang_list + '\n\n'
+            stats = stats + lang_list + '\n\n'
 
         if showEditors.lower() in truthy:
             empty = False
@@ -375,8 +375,8 @@ def generate_language_per_repo(result):
             "percent": percent
         })
 
-    title = translate['I Mostly Code in'] + ' ' + most_language_repo
-    return '**' + title + '** \n\n' + '```text\n' + make_list(data) + '\n\n```\n'
+#     title = translate['I Mostly Code in'] + ' ' + most_language_repo
+    return '```text\n' + make_list(data) + '\n```\n'
 
 
 def get_line_of_code():
