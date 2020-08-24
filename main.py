@@ -314,7 +314,7 @@ def get_waka_time_stats():
                 lang_list = no_activity
             else:
                 lang_list = make_list(data['data']['languages'])
-            stats = stats + lang_list + '\n\n'
+            stats = stats + lang_list + '\n'
 
         if showEditors.lower() in truthy:
             empty = False
@@ -441,12 +441,12 @@ def get_stats(github):
     if show_profile_view.lower() in truthy:
         data = run_v3_api(get_profile_view.substitute(owner=username, repo=username))
         stats += '![Profile Views](http://img.shields.io/badge/' + quote(str(translate['Profile Views'])) + '-' + str(
-            data['count']) + '-blue)\n\n'
+            data['count']) + '-blue)'
 
     if show_loc.lower() in truthy:
         stats += '![Lines of code](https://img.shields.io/badge/' + quote(
-            str(translate['From Hello World I have written'])) + '-' + quote(
-            str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '-blue)\n\n'
+            str(translate['From \"Hello, World!\", I have written'])) + '-' + quote(
+            str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '-blue)\n'
 
     if show_short_info.lower() in truthy:
         stats += get_short_info(github)
