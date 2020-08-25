@@ -445,7 +445,7 @@ def get_stats(github):
 
     if show_loc.lower() in truthy:
         stats += '![Lines of code](https://img.shields.io/badge/' + quote(
-            str('From \"Hello, World!\", I have written') + '-' + quote(
+            str(translate['From Hello World I have written'])) + '-' + quote(
             str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '-blue)\n'
 
     if show_short_info.lower() in truthy:
