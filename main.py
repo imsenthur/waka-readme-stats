@@ -450,8 +450,10 @@ def get_stats(github):
 
         stats += '![Blender](https://img.shields.io/badge/-Blender-orange)\n'
         stats += '![Python](https://img.shields.io/badge/-Python-blue)\n'
-        stats += '![ROS](https://img.shields.io/badge/-ROS-lightgrey)\n'
-        stats += '![Matlab](https://img.shields.io/badge/-Matlab-yellow)\n'
+        stats += '![TensorFlow](https://img.shields.io/badge/-TensorFlow-ff8c00)\n'
+        stats += '![ROS](https://img.shields.io/badge/-ROS-20b2aa)\n'
+        stats += '![Gazebo](https://img.shields.io/badge/-Gazebo-lightgrey)\n'
+        stats += '![Matlab](https://img.shields.io/badge/-Matlab-ffd700)\n'
         stats += '![Solidworks](https://img.shields.io/badge/-Solidworks-red)\n'
 
     if show_short_info.lower() in truthy:
