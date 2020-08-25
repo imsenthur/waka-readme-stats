@@ -314,7 +314,7 @@ def get_waka_time_stats():
                 lang_list = no_activity
             else:
                 lang_list = make_list(data['data']['languages'])
-            stats = stats + lang_list + '\n'
+            stats = stats + translate['Languages'] + ': \n' + lang_list + '\n\n'
 
         if showEditors.lower() in truthy:
             empty = False
@@ -332,7 +332,7 @@ def get_waka_time_stats():
                 # Re-order the project list by percentage
                 data['data']['projects'] = sorted(data['data']['projects'], key=lambda x: x["percent"], reverse=True)
                 project_list = make_list(data['data']['projects'])
-            stats = stats + '🐱‍💻 ' + translate['Projects'] + ': \n' + project_list + '\n\n'
+            stats = stats + translate['Projects'] + ': \n' + project_list + '\n'
 
         if showOs.lower() in truthy:
             empty = False
@@ -441,7 +441,7 @@ def get_stats(github):
     if show_profile_view.lower() in truthy:
         data = run_v3_api(get_profile_view.substitute(owner=username, repo=username))
         stats += '![Profile Views](http://img.shields.io/badge/' + quote(str(translate['Profile Views'])) + '-' + str(
-            data['count']) + '-blue)'
+            data['count']) + '-blue)\n'
 
     if show_loc.lower() in truthy:
         stats += '![Lines of code](https://img.shields.io/badge/' + quote(
@@ -463,11 +463,11 @@ def get_stats(github):
         stats += '**' + translate['Timeline'] + '**\n\n'
         stats = stats + '![Chart not found](https://github.com/' + username + '/' + username + '/blob/master/charts/bar_graph.png) \n\n'
         
-    # stats = stats + '![Blender](https://img.shields.io/badge/-Blender-orange)'
-    # stats = stats + '![Python](https://img.shields.io/badge/-Python-blue)'
-    # stats = stats + '![ROS](https://img.shields.io/badge/-ROS-lightgrey)'
-    # stats = stats + '![Matlab](https://img.shields.io/badge/-Matlab-yellow)'
-    # stats = stats + '![Solidworks](https://img.shields.io/badge/-Solidworks-red)'
+    stats = stats + '![Blender](https://img.shields.io/badge/-Blender-orange)\n'
+    stats = stats + '![Python](https://img.shields.io/badge/-Python-blue)\n'
+    stats = stats + '![ROS](https://img.shields.io/badge/-ROS-lightgrey)\n'
+    stats = stats + '![Matlab](https://img.shields.io/badge/-Matlab-yellow)\n'
+    stats = stats + '![Solidworks](https://img.shields.io/badge/-Solidworks-red)\n'
 
     return stats
 
