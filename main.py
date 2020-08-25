@@ -290,7 +290,7 @@ def get_waka_time_stats():
     stats = ''
     request = requests.get(
         f"https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key={waka_key}")
-    no_activity = "No activity tracked this week." #translate["No Activity Tracked This Week"]
+    no_activity = translate["No Activity Tracked This Week"]
 
     if request.status_code == 401:
         print("Error With WAKA time API returned " + str(request.status_code) + " Response " + str(request.json()))
@@ -445,7 +445,7 @@ def get_stats(github):
 
     if show_loc.lower() in truthy:
         stats += '![Lines of code](https://img.shields.io/badge/' + quote(
-            str(translate['From \"Hello, World!\", I have written'])) + '-' + quote(
+            str('From \"Hello, World!\", I have written') + '-' + quote(
             str(get_line_of_code())) + '%20' + quote(str(translate['Lines of code'])) + '-blue)\n'
 
     if show_short_info.lower() in truthy:
@@ -463,11 +463,11 @@ def get_stats(github):
         stats += '**' + translate['Timeline'] + '**\n\n'
         stats = stats + '![Chart not found](https://github.com/' + username + '/' + username + '/blob/master/charts/bar_graph.png) \n\n'
         
-    stats = stats + '![Blender](https://img.shields.io/badge/-Blender-orange)'
-    stats = stats + '![Python](https://img.shields.io/badge/-Python-blue)'
-    stats = stats + '![ROS](https://img.shields.io/badge/-ROS-lightgrey)'
-    stats = stats + '![Matlab](https://img.shields.io/badge/-Matlab-yellow)'
-    stats = stats + '![Solidworks](https://img.shields.io/badge/-Solidworks-red)'
+    # stats = stats + '![Blender](https://img.shields.io/badge/-Blender-orange)'
+    # stats = stats + '![Python](https://img.shields.io/badge/-Python-blue)'
+    # stats = stats + '![ROS](https://img.shields.io/badge/-ROS-lightgrey)'
+    # stats = stats + '![Matlab](https://img.shields.io/badge/-Matlab-yellow)'
+    # stats = stats + '![Solidworks](https://img.shields.io/badge/-Solidworks-red)'
 
     return stats
 
